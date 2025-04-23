@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Inria+Sans&family=Press+Start+2P&display=swap');
+
+* {
+    font-family: 'Press Start 2P', cursive;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/src/styles/components/flip.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    margin: 0;
+    overflow: hidden;
+}
+main {
+    padding-top: 80px; /* ou ajuste o valor conforme a altura da topbar */
+}
+#topo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    color: #00ffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 25px;
+    z-index: 1000;
+    box-shadow: 0 0 20px #00ffff;
+    border-bottom: 2px solid #ff00cc;
+}
+
+
+#topo nav a {
+    font-family: 'Press Start 2P', cursive;
+    color: #fff;
+    text-decoration: none;
+    margin-left: 30px;
+    transition: 0.3s;
+}
+
+#topo nav a:hover {
+    color: #ff00cc;
+    text-shadow: 0 0 10px #00ffff;
+}
+
+#logo {
+    height: 50px;
+    width: auto;
+    border-radius: 8px;
+}
+
+#apresentacao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 100px;
+    gap: 60px;
+}
+
+#texto {
+    max-width: 600px;
+}
+
+#destaque_texto {
+    color: white;
+    font-size: 25px;
+}
+
+#destaque_titulo {
+    color: aqua;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+#texto2 {
+    font-size: 15px;
+    margin-top: 20px;
+    color: white;
+}
+
+#imagem {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%; /* torna a imagem circular */
+    object-fit: cover; /* garante que a imagem preencha o círculo sem distorcer */
+    border: 1px solid #00ffff; /* borda em neon azul estilo fliperama */
+    box-shadow: 0 0 20px #0a9b9b, 0 0 40px #ba1399; /* efeito glow fliperama */
+}
+
+
+#botoes {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 30px 0;
+}
+
+/* Estilo FLIPERAMA nos botões */
+.btn-fliperama {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 14px;
+    padding: 16px 30px;
+    background-color: #ff00cc;
+    color: white;
+    border: 3px solid #00ffff;
+    box-shadow: 0 0 10px #00ffff, 0 0 20px #ff00cc;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.btn-fliperama::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: #00ffff;
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.btn-fliperama:hover::before {
+    transform: scaleX(1);
+}
+
+.btn-fliperama:hover {
+    color: black;
+    box-shadow: 0 0 20px #00ffff, 0 0 40px #ff00cc;
+}
